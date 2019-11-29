@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react'
+import ListItem from './ListItem'
 
 export default class TodoAppList extends Component {
   constructor() {
@@ -25,7 +26,7 @@ export default class TodoAppList extends Component {
        <p>List of Todo's</p>
        <ul>
        { this.state.todoList.map((list) => {
-          return (<li key="list.id">{list.todoName}<title>{list.todoDescription}</title></li>)
+          return <ListItem item={list}/>
         })}
        </ul>
       </React.Fragment>
