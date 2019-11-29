@@ -9,12 +9,14 @@ export default class TodoAppList extends Component {
         {
           id: 1,
           todoName:'Angular',
-          Description: 'Angular Description'
+          Description: 'Angular Description',
+          completed: false
         },
         {
           id: 2,
           todoName:'React',
-          Description: 'React Description'
+          Description: 'React Description',
+          completed: true
         }
       ]
     };

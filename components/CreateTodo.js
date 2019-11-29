@@ -4,8 +4,10 @@ export default class CreateTodo extends Component {
   constructor(){
     super()
     this.state = {
+      id: 0,
       todoName: '',
-      description: ''
+      description: '',
+      completed: false
     }
   }
 
