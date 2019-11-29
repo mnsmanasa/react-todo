@@ -14,7 +14,7 @@ export default class CreateTodo extends Component {
   addTodo=(event)=>{
     event.preventDefault()
     if(this.state.todoName !== null && this.state.description !== null) {
-      console.log(event.target)
+      
     }
   }
   handleTodoChange=(event)=>{
