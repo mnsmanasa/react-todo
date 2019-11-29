@@ -23,12 +23,11 @@ export default class TodoAppList extends Component {
   render() {
     return (
       <React.Fragment>
-       <p>List of Todo's</p>
-       <ul>
-       { this.state.todoList.map((list) => {
-          return <ListItem item={list}/>
-        })}
-       </ul>
+       <p>List of Todo's</p>       
+       { this.state.todoList.length ? <ul>{this.state.todoList.map((list) => {
+          return <ListItem item={list}/> })} </ul>: <div>Please create a todo</div>
+        }
+      
       </React.Fragment>
     );
   }
