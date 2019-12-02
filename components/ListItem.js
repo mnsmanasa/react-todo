@@ -12,7 +12,7 @@ export default class ListItem extends Component {
   }
   render() {
     console.log(this.props)
-    return (<React.Fragment key={this.props.item.id}><li title={this.props.item.Description} onClick={this.ToggleTodo} 
+    return (<React.Fragment key={this.props.item.id}><li title={this.props.item.Description} onClick={()=> dispatch({ type: 'TOGGLE_TODO'})} 
     style={{textDecoration: this.state.strikeThrough ? 'line-through' : 'none'}}>{this.props.item.todoName}
           </li></React.Fragment>)
   }
