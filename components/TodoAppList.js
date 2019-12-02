@@ -27,7 +27,7 @@ export default class TodoAppList extends Component {
       <React.Fragment>
        <p>List of Todo's</p>       
        { this.state.todoList.length ? <ul>{this.state.todoList.map((list) => {
-          return <ListItem item={list}/> })} </ul>: <div>Please create a todo</div>
+          return <ListItem key={list.id} item={list}/> })} </ul>: <div>Please create a todo</div>
         }
       
       </React.Fragment>
