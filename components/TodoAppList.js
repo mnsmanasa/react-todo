@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import ListItem from './ListItem'
+import { toDoService } from '../service';
 
 export default class TodoAppList extends Component {
   constructor() {
@@ -20,6 +21,19 @@ export default class TodoAppList extends Component {
         }
       ]
     };
+  }
+
+  componentDidMount() {
+    this.subscription = toDoService.getTodo().subscribe(todo => {
+  console.log(todo)
+            if (todo) {
+                // add message to local state if not empty
+                this.setState({ todoList: [...this.state.todoList, todo] });
+            } else {
+                // clear messages when empty message received
+                this.setState({ todoList: [] });
+            }
+        });
   }
 
   render() {

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { toDoService } from '../service';
 
 export default class CreateTodo extends Component {
   constructor(){
@@ -11,12 +12,13 @@ export default class CreateTodo extends Component {
     }
   }
 
-  addTodo=(event)=>{
+  addTodo =(event)=>{
     event.preventDefault()
-    if(this.state.todoName !== null && this.state.description !== null) {
-      
-    }
+    this.subscription = toDoService.addTodo(this.state.todoName,this.state.description).subscribe((name,descriptiom) => {
+      console.log(this.state.todoName,this.state.toDoService)
+    })
   }
+
   handleTodoChange=(event)=>{
     this.setState({todoName: event.target.value})
   }
